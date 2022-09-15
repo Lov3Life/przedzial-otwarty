@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zad1</title>
+    <style>
+        body{
+            background-color: #ababab;
+        }
+    </style>
+</head>
+<body>
+
+    <p>Podaj dwie liczby (Y ma być większe od X)</p>
+
+    <input type="number" name="x" id="numberx" placeholder="Podaj X">
+    <input type="number" name="y" id="numbery" placeholder="Podaj Y">
+    <button>Oblicz</button>
+    <p>Suma przedziału otwartego obu liczb:</p>
+    <p id="answer"></p>
+
+    <script>
+
+        document.querySelector("button").addEventListener("click", () => {
+            let x = parseInt(document.getElementById("numberx").value);
+            let y = parseInt(document.getElementById("numbery").value); 
+            let c = 0
+            if(x<y){
+                for(let i = x+1; i<y; i++){
+                    c=c+i;
+                }
+                document.getElementById("answer").innerHTML = c;
+            }else{
+                document.getElementById("answer").innerHTML = "Liczba X nie jest mniejsza od liczby Y";
+            }
+        })
+
+    </script>
+    
+</body>
+</html>
